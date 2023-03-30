@@ -7,7 +7,7 @@ const table = document.createElement('table');
 //><><><><>><><<<<< table styling
 table.style.border = "1px solid black";
 table.style.backgroundColor = "rgb(242, 246, 255)";
-table.style.width = "96vw";
+table.style.width = "97vw";
 table.style.textAlign = "center";
 const thead = document.createElement('thead');
 table.appendChild(thead);
@@ -43,7 +43,6 @@ async function getUsers() {
             throw new Error('Response error');
         }
         const users = await res.json();
-
         const tableBody = document.querySelector('tbody')!;
         users.map((item: { id: number; username: string; email: string; phone: string; }) => {
             const row = document.createElement('tr');
@@ -60,5 +59,5 @@ async function getUsers() {
         console.error('Error', error);
     }
 }
-
+//calling Function
 getUsers();
